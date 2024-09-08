@@ -15,14 +15,18 @@ import {
 } from "@/components/ui/form";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../../../public/logo-dark.png";
+import LogoDark from "../../../../public/logo-dark.png";
+import LogoLight from "../../../../public/logo.svg";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/global/Loader";
 import { Separator } from "@/components/ui/separator";
 import { actionLoginUser } from "@/lib/server-actions/auth-actions";
+import { useTheme } from "next-themes";
 
 const LoginPage = () => {
+	const theme = useTheme();
 	const router = useRouter();
 	const [submitError, setSubmitError] = useState("");
 
@@ -62,7 +66,12 @@ const LoginPage = () => {
           justify-left
           items-center"
 				>
-					<Image src={Logo} alt="Logo" width={50} height={50} />
+					<Image
+						src={theme.theme === "dark" ? LogoDark : LogoLight}
+						alt="Logo"
+						width={50}
+						height={50}
+					/>
 					<span
 						className="font-semibold
           dark:text-white text-4xl first-letter:ml-2"

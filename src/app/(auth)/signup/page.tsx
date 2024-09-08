@@ -18,12 +18,15 @@ import React, { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import Logo from "../../../../public/cypresslogo.svg";
+import LogoLight from "../../../../public/logo.svg";
+import LogoDark from "../../../../public/logo-dark.png";
+
 import Loader from "@/components/global/Loader";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { MailCheck } from "lucide-react";
 import { FormSchema } from "@/lib/types";
 import { actionSignUpUser } from "@/lib/server-actions/auth-actions";
+import { useTheme } from "next-themes";
 
 const SignUpFormSchema = z
 	.object({
@@ -43,6 +46,7 @@ const SignUpFormSchema = z
 	});
 
 const Signup = () => {
+	const theme = useTheme();
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const [submitError, setSubmitError] = useState("");
@@ -101,7 +105,12 @@ const Signup = () => {
           justify-left
           items-center"
 				>
-					<Image src={Logo} alt="Logo" width={50} height={50} />
+					<Image
+						src={theme.theme === "dark" ? LogoDark : LogoLight}
+						alt="Logo"
+						width={50}
+						height={50}
+					/>
 					<span
 						className="font-semibold
           dark:text-white text-4xl first-letter:ml-2"
