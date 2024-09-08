@@ -1,0 +1,41 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1725237409991,
+      "tag": "0000_silent_maelstrom",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1725237613342,
+      "tag": "0001_soft_mockingbird",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1725238207512,
+      "tag": "0002_mute_tigra",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1725257744046,
+      "tag": "0003_fair_jazinda",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1725273543028,
+      "tag": "0004_workable_wolf_cub",
+      "breakpoints": true
+    }
+  ]
+}
